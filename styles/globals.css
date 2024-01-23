@@ -1,0 +1,30 @@
+/* ./styles/globals.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .icon {
+    @apply hidden xl:inline-flex p-2 h-10 w-10 bg-gray-200 text-gray-700  rounded-full  cursor-pointer hover:bg-gray-300;
+  }
+
+  .inputIcon {
+    @apply flex items-center space-x-1 hover:bg-gray-100 flex-grow justify-center p-2 rounded-xl hover:opacity-100 hover:scale-105 cursor-pointer;
+  }
+
+  .formclass {
+    width: 100%;
+  }
+
+  .formclass1 {
+    width: 80%;
+  }
+
+  .formclass2 {
+    width: 20%;
+  }
+
+  .sidebarrowicon {
+    @apply hidden  xl:inline-flex p-0 h-8 w-8 text-blue-500  rounded-full  cursor-pointer;
+  }
+}
