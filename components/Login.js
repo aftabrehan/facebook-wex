@@ -17,6 +17,15 @@ function Login() {
       >
         Login with a Facebook account
       </h1>
+
+      <h1
+        onClick={() =>
+          signIn('credentials', { password: process.env.DEMO_USER_PASSWORD })
+        }
+        className="text-center cursor-pointer p-5 bg-blue-500 rounded-full text-white"
+      >
+        Login with a Demo account
+      </h1>
     </div>
   )
 }
