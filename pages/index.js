@@ -10,18 +10,24 @@ import Widgets from '../components/Widgets'
 import { db } from '../firebase'
 
 export default function Home({ session, posts }) {
-  if (!session) return <Login />
   return (
-    <div className=" bg-gray-100">
+    <div>
       <Head>
         <title>Facebook Clone</title>
       </Head>
-      <Header />
-      <main className="flex">
-        <Sidebar />
-        <Feed posts={posts} />
-        <Widgets />
-      </main>
+
+      {session ? (
+        <div className="bg-gray-100">
+          <Header />
+          <main className="flex">
+            <Sidebar />
+            <Feed posts={posts} />
+            <Widgets />
+          </main>
+        </div>
+      ) : (
+        <Login />
+      )}
     </div>
   )
 }
