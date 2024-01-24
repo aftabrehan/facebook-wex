@@ -17,8 +17,6 @@ function StoryCard({ name, src, profile }) {
         className="object-cover filter brightness-75 rounded-full lg:rounded-3xl  "
         src={src}
         layout="fill"
-        width={80}
-        height={80}
       />
       <p className="mt-20 absolute opacity-0 lg:opacity-100 botton-4 w-5/6 text-white text-sm font-bold truncate">
         {name}

@@ -2,12 +2,12 @@ import firebase from 'firebase'
 import 'firebase/storage'
 
 const firebaseConfig = {
-  apiKey: 'AIzaSyAdCvkBEzW9l91oXNkKlVv9q9tbdYW0PV8',
-  authDomain: 'facebook-clone-30f86.firebaseapp.com',
-  projectId: 'facebook-clone-30f86',
-  storageBucket: 'facebook-clone-30f86.appspot.com',
-  messagingSenderId: '770053273256',
-  appId: '1:770053273256:web:b62c437fe20953c037749d',
+  apiKey: process.env.FIREBASE_API_KEY,
+  authDomain: process.env.FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.FIREBASE_PROJECT_ID,
+  storageBucket: process.env.FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.FIREBASE_APP_ID,
 }
 
 const app = !firebase.apps.length
