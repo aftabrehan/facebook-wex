@@ -12,19 +12,9 @@
     @apply flex items-center space-x-1 hover:bg-gray-100 flex-grow justify-center p-2 rounded-xl hover:opacity-100 hover:scale-105 cursor-pointer;
   }
 
-  .formclass {
-    width: 100%;
-  }
-
-  .formclass1 {
-    width: 80%;
-  }
-
-  .formclass2 {
-    width: 20%;
-  }
-
-  .sidebarrowicon {
-    @apply hidden  xl:inline-flex p-0 h-8 w-8 text-blue-500  rounded-full  cursor-pointer;
+  @media (max-width: 530px) {
+    .sidebar {
+      display: none;
+    }
   }
 }

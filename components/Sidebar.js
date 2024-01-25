@@ -13,10 +13,11 @@ import {
 import SidebarRow from './SidebarRow'
 
 function Sidebar() {
-  const [session, loading] = useSession()
+  const [session] = useSession()
+
   return (
-    <div>
-      <div className="p-2 mt-5 max-w-[600px] xl:min-w-[300px]">
+    <div className="sidebar">
+      <div className="p-2 sm:mt-5 max-w-[600px] xl:min-w-[300px]">
         <SidebarRow
           src={session.user.image}
           title={session.user.name}

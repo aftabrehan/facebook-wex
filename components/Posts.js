@@ -6,9 +6,9 @@ function Posts({ posts }) {
   const [realtimePosts] = useCollection(
     db.collection('posts').orderBy('timestamp', 'desc')
   )
-  const colRef = db.collection('posts')
+
   return (
-    <div>
+    <div className="pb-12">
       {realtimePosts
         ? realtimePosts?.docs.map(post => (
             <Post
