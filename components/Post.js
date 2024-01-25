@@ -6,14 +6,14 @@ const Post = ({ name, message, timestamp, image, postImage }) => (
     <div className="p-5 bg-white mt-5 rounded-t-2xl shadow-sm">
       <div className="flex items-center space-x-2">
         <Image
-          className="rounded-full"
+          className="rounded-full bg-gray-100"
           src={image}
           width={40}
           height={40}
-          alt="user profile picture"
+          alt=""
         />
-        <div>
-          <p>{name}</p>
+        <div className="flex flex-col gap-1">
+          <p className="font-medium">{name}</p>
           <p className="text-xs text-gray-400">
             {timestamp
               ? new Date(timestamp?.toDate()).toLocaleString()

@@ -90,16 +90,17 @@ const Login = () => {
   return (
     <div className="flex h-screen">
       <div className="hidden sm:flex w-[40vw] lg:w-[60vw] h-full items-center justify-center bg-[#F4F9FF]">
-        <Image
-          alt="login image"
-          src={loginImage}
-          objectFit="contain"
-          width={800}
-          className="w-full h-auto mix-blend-multiply !border !border-red-500"
-        />
+        <div className="w-full max-w-2xl">
+          <Image
+            alt="login image"
+            src={loginImage}
+            objectFit="contain"
+            className="mix-blend-multiply"
+          />
+        </div>
       </div>
 
-      <div className="flex flex-col flex-grow h-full items-center justify-center gap-3">
+      <div className="flex flex-col flex-grow h-full items-center justify-center gap-14">
         <Image
           alt="facebook logo"
           src={logoBig}
@@ -127,7 +128,13 @@ const Login = () => {
             Sign Up with Google
           </button>
 
-          <p className="text-black text-opacity-50">OR</p>
+          <p
+            className={`text-black text-opacity-50 ${
+              isDisabled ? 'pointer-events-none opacity-50' : ''
+            }`}
+          >
+            OR
+          </p>
 
           <button
             disabled={isDisabled}

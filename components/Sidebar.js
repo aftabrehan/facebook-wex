@@ -10,31 +10,22 @@ import {
   DesktopComputerIcon,
   UsersIcon,
 } from '@heroicons/react/solid'
+
 import SidebarRow from './SidebarRow'
 
-function Sidebar() {
+const Sidebar = () => {
   const [session] = useSession()
 
   return (
-    <div className="sidebar">
-      <div className="p-2 sm:mt-5 max-w-[600px] xl:min-w-[300px]">
-        <SidebarRow
-          src={session.user.image}
-          title={session.user.name}
-          className="p-2 mt-5 max-w-[600px] xl:min-w-[300px]"
-        />
-        <SidebarRow
-          Icon={UsersIcon}
-          title="Friends"
-          className="p-2 mt-5 max-w-[600px] xl:min-w-[300px]"
-        />
-        <SidebarRow Icon={UserGroupIcon} title="Groups" />
-        <SidebarRow Icon={ShoppingBagIcon} title="Marketplace" />
-        <SidebarRow Icon={DesktopComputerIcon} title="Watch" />
-        <SidebarRow Icon={CalendarIcon} title="Events" />
-        <SidebarRow Icon={ClockIcon} title="Memories" />
-        <SidebarRow Icon={ChevronDownIcon} title="See More" />
-      </div>
+    <div className="sidebar p-2 sm:mt-5 max-w-[600px] xl:min-w-[300px]">
+      <SidebarRow src={session.user.image} title={session.user.name} />
+      <SidebarRow Icon={UsersIcon} title="Friends" />
+      <SidebarRow Icon={UserGroupIcon} title="Groups" />
+      <SidebarRow Icon={ShoppingBagIcon} title="Marketplace" />
+      <SidebarRow Icon={DesktopComputerIcon} title="Watch" />
+      <SidebarRow Icon={CalendarIcon} title="Events" />
+      <SidebarRow Icon={ClockIcon} title="Memories" />
+      <SidebarRow Icon={ChevronDownIcon} title="See More" />
     </div>
   )
 }
