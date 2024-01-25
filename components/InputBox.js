@@ -64,16 +64,16 @@ function InputBox() {
 
   return (
     <div className="bg-white p-2 rounded-2xl shadow-md text=gray-500 font-medium mt-6">
-      <div className="p-5 flex gap-x-2 sm:gap-x-4 items-center">
+      <div className="py-5 px-2 sm:px-5 flex gap-x-2 sm:gap-x-4 items-center">
         <Image
-          alt="User Profile Picture"
-          className="rounded-full"
+          alt=""
+          className="rounded-full bg-gray-100"
           src={session.user.image}
-          width="40"
-          height="40"
+          width={48}
+          height={48}
           layout="fixed"
         />
-        <form className="flex flex-grow formclass">
+        <form className="flex flex-grow">
           <input
             className="rounded-full h-12 bg-gray-100 flex-grow px-5 focus:outline-none"
             type="text"
