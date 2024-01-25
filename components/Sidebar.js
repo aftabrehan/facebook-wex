@@ -1,4 +1,4 @@
-import { signOut, useSession } from 'next-auth/client'
+import { signOut, useSession } from 'next-auth/react'
 import {
   ShoppingBagIcon,
   UserGroupIcon,
@@ -14,7 +14,7 @@ import {
 import SidebarRow from './SidebarRow'
 
 const Sidebar = () => {
-  const [session] = useSession()
+  const { data: session } = useSession()
 
   return (
     <div className="sidebar p-2 sm:mt-5 max-w-[600px] xl:min-w-[300px]">

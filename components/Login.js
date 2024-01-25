@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import Image from 'next/image'
-import { signIn } from 'next-auth/client'
+import { signIn } from 'next-auth/react'
 
 import loginImage from '../public/login.jpg'
 import logoBig from '../public/logo-big.png'

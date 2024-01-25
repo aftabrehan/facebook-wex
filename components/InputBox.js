@@ -1,6 +1,6 @@
 import { useRef, useState } from 'react'
 import Image from 'next/image'
-import { useSession } from 'next-auth/client'
+import { useSession } from 'next-auth/react'
 import firebase from 'firebase'
 import { EmojiHappyIcon } from '@heroicons/react/outline'
 import { CameraIcon, VideoCameraIcon } from '@heroicons/react/solid'
@@ -8,7 +8,7 @@ import { CameraIcon, VideoCameraIcon } from '@heroicons/react/solid'
 import { db, storage } from '../firebase'
 
 function InputBox() {
-  const [session] = useSession()
+  const { data: session } = useSession()
   const inputRef = useRef(null)
   const filePickerRef = useRef(null)
   const [imageToPost, setImageToPost] = useState(null)

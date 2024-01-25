@@ -1,11 +1,10 @@
-import { Provider } from 'next-auth/client'
-
+import { SessionProvider } from 'next-auth/react'
 import '../styles/globals.css'
 
 const MyApp = ({ Component, pageProps }) => (
-  <Provider session={pageProps.session}>
+  <SessionProvider session={pageProps.session}>
     <Component {...pageProps} />
-  </Provider>
+  </SessionProvider>
 )
 
 export default MyApp

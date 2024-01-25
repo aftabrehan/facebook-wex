@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import { getSession } from 'next-auth/client'
+import { getSession } from 'next-auth/react'
 
 import Header from '../components/Header'
 import Login from '../components/Login'
@@ -9,28 +9,28 @@ import Widgets from '../components/Widgets'
 
 import { db } from '../firebase'
 
-export default function Home({ session, posts }) {
-  return (
-    <div>
-      <Head>
-        <title>Facebook Clone</title>
-      </Head>
+const Home = ({ session, posts }) => (
+  <div>
+    <Head>
+      <title>Facebook Clone</title>
+    </Head>
 
-      {session ? (
-        <div className="bg-gray-100">
-          <Header />
-          <main className="flex">
-            <Sidebar />
-            <Feed posts={posts} />
-            <Widgets />
-          </main>
-        </div>
-      ) : (
-        <Login />
-      )}
-    </div>
-  )
-}
+    {session ? (
+      <div className="bg-gray-100">
+        <Header />
+        <main className="flex">
+          <Sidebar />
+          <Feed posts={posts} />
+          <Widgets />
+        </main>
+      </div>
+    ) : (
+      <Login />
+    )}
+  </div>
+)
+
+export default Home
 
 export async function getServerSideProps(context) {
   const session = await getSession(context)

@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import { signOut, useSession } from 'next-auth/client'
+import { signOut, useSession } from 'next-auth/react'
 import {
   BellIcon,
   ChatIcon,
@@ -20,7 +20,7 @@ import HeaderIcon from './HeaderIcon'
 import logo from '../public/logo.png'
 
 const Header = () => {
-  const [session] = useSession()
+  const { data: session } = useSession()
 
   return (
     <div className="w-full sticky top-0 z-50 bg-white flex items-center p-2 lg:px-5 shadow-md">
