@@ -142,7 +142,7 @@ const Login = () => {
             className="flex items-center justify-center w-full max-w-[320px] gap-2 cursor-pointer px-6 py-3 bg-black rounded-xl text-white shadow-md hover:shadow hover:opacity-90 transition-all disabled:pointer-events-none disabled:opacity-50"
           >
             <LoginIcon />
-            Login with a Demo Account
+            Login as Guest
           </button>
         </div>
       </div>

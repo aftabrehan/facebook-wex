@@ -1,7 +1,10 @@
 import Image from 'next/image'
 
-const SidebarRow = ({ src, Icon, title }) => (
-  <div className="flex items-center justify-center sm:justify-start space-x-2 px-2 sm:px-4 py-4 cursor-pointer hover:bg-gray-200 rounded-full">
+const SidebarRow = ({ src, Icon, title, onClick }) => (
+  <div
+    onClick={onClick}
+    className="flex items-center justify-center sm:justify-start space-x-2 px-2 sm:px-4 py-4 cursor-pointer hover:bg-gray-200 rounded-full"
+  >
     {src && (
       <Image
         alt=""

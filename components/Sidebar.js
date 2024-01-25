@@ -1,8 +1,8 @@
-import { useSession } from 'next-auth/client'
+import { signOut, useSession } from 'next-auth/client'
 import {
-  ChevronDownIcon,
   ShoppingBagIcon,
   UserGroupIcon,
+  LogoutIcon,
 } from '@heroicons/react/outline'
 import {
   CalendarIcon,
@@ -25,7 +25,7 @@ const Sidebar = () => {
       <SidebarRow Icon={DesktopComputerIcon} title="Watch" />
       <SidebarRow Icon={CalendarIcon} title="Events" />
       <SidebarRow Icon={ClockIcon} title="Memories" />
-      <SidebarRow Icon={ChevronDownIcon} title="See More" />
+      <SidebarRow Icon={LogoutIcon} title="Logout" onClick={signOut} />
     </div>
   )
 }
