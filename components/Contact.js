@@ -12,7 +12,7 @@ const Contact = ({ src, name }) => (
       alt=""
     />
     <p>{name}</p>
-    <div className="absolute bottom-3 left-8 bg-green-400 h-3 w-3 rounded-full animate-bloque" />
+    <div className="absolute bottom-2 left-8 bg-green-400 h-[16px] w-[16px] rounded-full animate-bloque border-2 border-white" />
   </div>
 )
 

@@ -35,14 +35,12 @@ const Header = () => {
           />
         </div>
       </div>
-      <div className="flex justify-center flex-grow">
-        <div className="flex space-x-6 md:space-x-2">
-          <HeaderIcon active Icon={HomeIcon} />
-          <HeaderIcon Icon={FlagIcon} />
-          <HeaderIcon Icon={PlayIcon} />
-          <HeaderIcon Icon={ShoppingCartIcon} />
-          <HeaderIcon Icon={UserGroupIcon} />
-        </div>
+      <div className="flex justify-center flex-grow space-x-6 md:space-x-2">
+        <HeaderIcon active Icon={HomeIcon} />
+        <HeaderIcon Icon={FlagIcon} />
+        <HeaderIcon Icon={PlayIcon} />
+        <HeaderIcon Icon={ShoppingCartIcon} />
+        <HeaderIcon Icon={UserGroupIcon} />
       </div>
       <div className="flex items-center sm:space-x-2 justify-end">
         <Image

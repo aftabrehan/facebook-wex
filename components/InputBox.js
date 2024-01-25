@@ -1,15 +1,16 @@
 import { useRef, useState } from 'react'
 import Image from 'next/image'
 import { useSession } from 'next-auth/client'
+import firebase from 'firebase'
 import { EmojiHappyIcon } from '@heroicons/react/outline'
 import { CameraIcon, VideoCameraIcon } from '@heroicons/react/solid'
+
 import { db, storage } from '../firebase'
-import firebase from 'firebase'
 
 function InputBox() {
   const [session] = useSession()
   const inputRef = useRef(null)
-  const filepickerRef = useRef(null)
+  const filePickerRef = useRef(null)
   const [imageToPost, setImageToPost] = useState(null)
   const sendPost = e => {
     e.preventDefault()
@@ -63,7 +64,7 @@ function InputBox() {
 
   return (
     <div className="bg-white p-2 rounded-2xl shadow-md text=gray-500 font-medium mt-6">
-      <div className="p-5 flex space-x-4 items-center">
+      <div className="p-5 flex gap-x-2 sm:gap-x-4 items-center">
         <Image
           alt="User Profile Picture"
           className="rounded-full"
@@ -83,23 +84,25 @@ function InputBox() {
             Submit
           </button>
         </form>
+
         {imageToPost && (
-          <div
-            onClick={removeImage}
-            className=" flex flex-col filter hover:brightness-110 transition duration-150 transform hover:scale-105 cursor-pointer"
-          >
+          <div className="w-max flex flex-col p-2 gap-2 filter hover:brightness-120 cursor-pointer bg-gray-200 bg-opacity-50 rounded-lg">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              className="h-10 object-contain"
+              className="h-10 object-contain rounded-md"
               src={imageToPost}
               alt="image to post"
             />
-            <p className="cursor-pointer text-xs text-red-500 hover:text-green-500 text-center">
+            <button
+              onClick={removeImage}
+              className="p-1 cursor-pointer text-xs text-red-600 bg-red-400 bg-opacity-10 hover:bg-opacity-20 transition-all text-center rounded"
+            >
               Remove
-            </p>
+            </button>
           </div>
         )}
       </div>
+
       <div className="flex justify-evenly p-3 border-t">
         <div className="inputIcon">
           <VideoCameraIcon className="h-7 text-red-500" />
@@ -110,7 +113,7 @@ function InputBox() {
         </div>
 
         <div
-          onClick={() => filepickerRef.current.click()}
+          onClick={() => filePickerRef.current.click()}
           className="inputIcon"
         >
           <CameraIcon className="h-7 text-green-400" />
@@ -119,7 +122,7 @@ function InputBox() {
             Photo/Video
           </p>
           <input
-            ref={filepickerRef}
+            ref={filePickerRef}
             onChange={addImageToPost}
             type="file"
             hidden
