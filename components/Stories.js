@@ -30,7 +30,7 @@ const stories = [
 
 function Stories() {
   return (
-    <div className="flex justify-center space-x-3 mx-auto">
+    <div className="flex justify-center sm:justify-between gap-x-4 sm:gap-x-2 mx-auto">
       {stories.map(story => (
         <StoryCard
           key={story.src}

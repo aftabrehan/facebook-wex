@@ -5,6 +5,7 @@ module.exports = {
       'firebasestorage.googleapis.com',
       'lh3.googleusercontent.com',
       'images.unsplash.com',
+      'platform-lookaside.fbsbx.com',
     ],
   },
   env: {
