@@ -5,7 +5,7 @@ export const LoginImage = ({ className }) => (
     xmlns="http://www.w3.org/2000/svg"
     className={className}
   >
-    <g clip-path="url(#clip0_106_5)">
+    <g clipPath="url(#clip0_106_5)">
       <path
         d="M117.675 88.7438L113.675 109.744L133.618 115.366L131.14 92.946L117.675 88.7438Z"
         fill="#FAD8D8"
