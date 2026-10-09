@@ -7,7 +7,7 @@ const Post = ({ name, message, timestamp, image, postImage }) => (
       <div className="flex items-center space-x-2">
         <Image
           className="rounded-full bg-gray-100"
-          src={image}
+          src={image || '/logo.png'}
           width={40}
           height={40}
           alt=""
@@ -24,8 +24,8 @@ const Post = ({ name, message, timestamp, image, postImage }) => (
       <p className="pt-4"> {message}</p>
     </div>
     {postImage && (
-      <div className="relative h-56 md:h-96 bg-white bg-opacity-50">
-        <Image src={postImage} objectFit="cover" layout="fill" alt="" />
+      <div className="relative h-56 md:h-96 bg-white/50">
+        <Image src={postImage} style={{ objectFit: 'cover' }} fill sizes="(max-width: 768px) 100vw, 672px" alt="" />
       </div>
     )}
 

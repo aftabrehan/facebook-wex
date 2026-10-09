@@ -1,5 +1,6 @@
 import Head from 'next/head'
-import { getSession } from 'next-auth/react'
+import { getServerSession } from 'next-auth/next'
+import { authOptions } from './api/auth/[...nextauth]'
 
 import Header from '../components/Header'
 import Login from '../components/Login'
@@ -7,7 +8,6 @@ import Sidebar from '../components/Sidebar'
 import Feed from '../components/Feed'
 import Widgets from '../components/Widgets'
 
-import { db } from '../firebase'
 
 const Home = ({ session, posts }) => (
   <div>
@@ -32,15 +32,7 @@ const Home = ({ session, posts }) => (
 
 export default Home
 
-export async function getServerSideProps(context) {
-  const session = await getSession(context)
-  const posts = await db.collection('posts').orderBy('timestamp', 'desc').get()
-
-  const docs = posts?.docs.map(post => ({
-    id: post.id,
-    ...post.data(),
-    timestamp: null,
-  }))
-
-  return { props: { session, posts: docs } }
+export async function getServerSideProps({ req, res }) {
+  const session = await getServerSession(req, res, authOptions)
+  return { props: { session, posts: [] } }
 }

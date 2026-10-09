@@ -1,15 +1,14 @@
 module.exports = {
   reactStrictMode: true,
   images: {
-    domains: [
-      'firebasestorage.googleapis.com',
-      'lh3.googleusercontent.com',
-      'images.unsplash.com',
-      'platform-lookaside.fbsbx.com',
+    remotePatterns: [
+      { protocol: 'https', hostname: 'firebasestorage.googleapis.com' },
+      { protocol: 'https', hostname: 'lh3.googleusercontent.com' },
+      { protocol: 'https', hostname: 'images.unsplash.com' },
+      { protocol: 'https', hostname: 'platform-lookaside.fbsbx.com' },
     ],
   },
   env: {
-    DEMO_USER_PASSWORD: process.env.DEMO_USER_PASSWORD,
     FIREBASE_API_KEY: process.env.FIREBASE_API_KEY,
     FIREBASE_AUTH_DOMAIN: process.env.FIREBASE_AUTH_DOMAIN,
     FIREBASE_PROJECT_ID: process.env.FIREBASE_PROJECT_ID,
